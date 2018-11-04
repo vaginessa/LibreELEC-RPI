@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
 # Copyright (C) 2016-present Team LibreELEC (https://libreelec.tv)
+# Copyright (C) 2011-present AlexELEC (http://www.alexelec.in.ua)
 
 ################################################################################
 # variables such as $ROOT $PATH etc... that are required for this
@@ -321,7 +322,7 @@ fi # bootloader
 
 # gzip
   echo "image: compressing..."
-  gzip $DISK
+  gzip < $DISK > $DISK.gz
 
 # set owner
   if [ -n "$SUDO_USER" ] ; then
