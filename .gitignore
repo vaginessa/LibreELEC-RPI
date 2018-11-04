@@ -31,3 +31,9 @@ mkpkg-temp
 # crap
 .DS_Store
 .directory
+
+# private dir
+/private/
+
+# current build pkg info
+/.current.build.pkg
