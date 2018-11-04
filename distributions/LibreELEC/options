@@ -15,13 +15,13 @@
 
 # Welcome Message for e.g. SSH Server (up to 5 Lines)
   GREETING0="##############################################"
-  GREETING1="#                 LibreELEC                  #"
-  GREETING2="#            https://libreelec.tv            #"
+  GREETING1="#            LibreELEC (ae-fork)             #"
+  GREETING2="#           http://alexelec.in.ua            #"
   GREETING3="##############################################"
   GREETING4=""
 
 # Root password to integrate in the target system
-  ROOT_PASSWORD="libreelec"
+  ROOT_PASSWORD="mcpc"
 
 # Install glibc locales to the build (yes / no)
   GLIBC_LOCALES="yes"
@@ -190,7 +190,7 @@
 
 # Distribution Specific source location
   DISTRO_MIRROR="http://sources.libreelec.tv/mirror"
-  DISTRO_SRC="http://sources.libreelec.tv/$LIBREELEC_VERSION"
+  DISTRO_SRC="http://sources.libreelec.tv/devel"
 
 # Addon Server Url
   ADDON_SERVER_URL="https://addons.libreelec.tv"
