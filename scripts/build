@@ -2,6 +2,7 @@
 
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
+# Copyright (C) 2011-present AlexELEC (http://www.alexelec.in.ua)
 
 . config/options $1
 
@@ -120,6 +121,7 @@ unset -f pre_makeinstall_bootstrap
 unset -f makeinstall_bootstrap
 unset -f post_makeinstall_bootstrap
 
+echo "current build: $PACKAGE_NAME" > $CURRENT_PKGBUILD
 # configure debug build defaults
 if [ "${BUILD_WITH_DEBUG}" = "yes" ]; then
   CMAKE_BUILD_TYPE="Debug"
