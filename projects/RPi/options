@@ -141,4 +141,3 @@
   # build with entware installer
     ENTWARE_SUPPORT="yes"
     ENTWARE_ARCH="armv7sf-k3.2"
-
