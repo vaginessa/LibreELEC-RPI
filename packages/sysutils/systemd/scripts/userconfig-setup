@@ -10,3 +10,9 @@ done
 
 # Copy config files, but don't overwrite - this should replace our sample files
 false | cp -iRp /usr/config/* /storage/.config/ &>/dev/null
+
+# RPi fix /opt/vc
+if [ ! -d /storage/.opt/vs ]; then
+  mkdir -p /storage/.opt/vs
+  ln -sf /usr/lib /storage/.opt/vs/lib
+fi

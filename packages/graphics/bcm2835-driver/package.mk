@@ -49,9 +49,6 @@ makeinstall_target() {
     cp -PRv $FLOAT/opt/vc/bin/vcgencmd $INSTALL/usr/bin
     cp -PRv $FLOAT/opt/vc/bin/tvservice $INSTALL/usr/bin
     cp -PRv $FLOAT/opt/vc/bin/edidparser $INSTALL/usr/bin
-
-  mkdir -p $INSTALL/usr/config/.opt/vs
-    ln -sf /usr/lib $INSTALL/usr/config/.opt/vs/lib
 }
 
 post_install() {
