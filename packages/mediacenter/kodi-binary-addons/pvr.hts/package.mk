@@ -1,10 +1,11 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
 # Copyright (C) 2018-present Team LibreELEC (https://libreelec.tv)
+# Copyright (C) 2011-present Alex@ELEC (http://alexelec.in.ua)
 
 PKG_NAME="pvr.hts"
-PKG_VERSION="4d0cb6dba635f710ad47c103a9129a33a54ec665"
-PKG_SHA256="11b62de6992ae3ae809a598e764d5c69c971473f3e30eb58ed6743b50f5a50f7"
+PKG_VERSION="f4ea60f944d0cfb8b73c0f9dc2181e54d3c367bf"
+PKG_SHA256="751cbd3d2f7938a675ab65b63fb16ba4379f34cecaa1adff7dc1c0a412d7e168"
 PKG_REV="2"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
