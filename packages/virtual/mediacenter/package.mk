@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
 # Copyright (C) 2018-present Team LibreELEC (https://libreelec.tv)
+# Copyright (C) 2011-present Alex@ELEC (http://alexelec.in.ua)
 
 PKG_NAME="mediacenter"
 PKG_VERSION=""
@@ -11,7 +12,7 @@ PKG_DEPENDS_TARGET="toolchain $MEDIACENTER"
 PKG_SECTION="virtual"
 PKG_LONGDESC="Mediacenter: Metapackage"
 
-if [ "$MEDIACENTER" = "kodi" ]; then
+# kodi skins
   PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET $MEDIACENTER-theme-$SKIN_DEFAULT"
 
   for i in $SKINS; do
@@ -38,9 +39,6 @@ if [ "$MEDIACENTER" = "kodi" ]; then
     PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET peripheral.joystick"
   fi
 
-  get_graphicdrivers
-  if listcontains "$GRAPHIC_DRIVERS" "(i915|i965)"; then
-    PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET intel-vaapi-driver"
-  fi
-
-fi
+# kodi-binary-addons pvr
+  PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET pvr.iptvsimple"
+  PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET pvr.hts"
