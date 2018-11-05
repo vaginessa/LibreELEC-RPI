@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2018-present CoreELEC (https://coreelec.org)
+# Copyright (C) 2011-present AlexELEC (http://www.alexelec.in.ua)
 
 PKG_NAME="entware"
 PKG_VERSION=""
@@ -15,11 +16,11 @@ PKG_TOOLCHAIN="manual"
 
 post_install() {
   mkdir -p $INSTALL/usr/sbin
-    cp -P $PKG_DIR/scripts/installentware $INSTALL/usr/sbin
+    cp -P $PKG_DIR/scripts/entware-install $INSTALL/usr/sbin
 
     # Replace Entware Arch
     sed -e "s/@ENTWARE_ARCH@/$ENTWARE_ARCH/g" \
-         -i $INSTALL/usr/sbin/installentware
+         -i $INSTALL/usr/sbin/entware-install
 
   enable_service entware.service
 }
