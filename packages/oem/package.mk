@@ -6,7 +6,7 @@ PKG_VERSION=""
 PKG_LICENSE="various"
 PKG_SITE="http://alexelec.in.ua"
 PKG_URL=""
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET="toolchain wget"
 PKG_SECTION="virtual"
 PKG_LONGDESC="OEM: Metapackage for various OEM packages"
 
