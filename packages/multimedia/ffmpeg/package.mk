@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
 # Copyright (C) 2017-present Team LibreELEC (https://libreelec.tv)
+# Copyright (C) 2011-present Alex@ELEC (http://alexelec.in.ua)
 
 PKG_NAME="ffmpeg"
 # Current branch is: release/4.0-kodi
@@ -111,7 +112,9 @@ configure_target() {
               --pkg-config="$TOOLCHAIN/bin/pkg-config" \
               --enable-optimizations \
               --disable-extra-warnings \
-              --disable-programs \
+              --disable-ffprobe \
+              --disable-ffplay \
+              --enable-ffmpeg \
               --enable-avdevice \
               --enable-avcodec \
               --enable-avformat \
