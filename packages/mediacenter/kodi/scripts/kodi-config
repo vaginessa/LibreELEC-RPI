@@ -30,14 +30,6 @@ if [ ! -f $KODI_ROOT/userdata/guisettings.xml ] ; then
   fi
 fi
 
-KODI_ARGS=""
-
-echo "KODI_ARGS=\"$KODI_ARGS\"" > /run/libreelec/kodi.conf
-
-if [ "$(uname -m)" = "x86_64" -o "$(uname -m)" = "aarch64" ]; then
-  echo "MALLOC_MMAP_THRESHOLD_=524288" >> /run/libreelec/kodi.conf
-else #arm
-  echo "MALLOC_MMAP_THRESHOLD_=8192" >> /run/libreelec/kodi.conf
-fi
+echo "MALLOC_MMAP_THRESHOLD_=8192" > /run/libreelec/kodi.conf
 
 [ -f /storage/.config/kodi.conf ] && cat /storage/.config/kodi.conf >>/run/libreelec/kodi.conf
