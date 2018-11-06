@@ -3,10 +3,10 @@
 	<shortcut>
 		<defaultID>service.coreelec.settings</defaultID>
 		<label>Настройки</label>
-		<label2>Программа</label2>
+		<label2>Пользовательский элемент</label2>
 		<icon>special://skin/extras/icons/DefaultAddon.png</icon>
 		<thumb>image://%2fusr%2fshare%2fkodi%2faddons%2fservice.coreelec.settings%2fresources%2ficon.png/</thumb>
-		<action>RunAddOn(service.coreelec.settings)</action>
+		<action>RunAddOn(service.libreelec.settings)</action>
 	</shortcut>
 	<shortcut>
 		<defaultID>24001</defaultID>
