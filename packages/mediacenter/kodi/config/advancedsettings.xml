@@ -1,4 +1,5 @@
 <advancedsettings>
+  <splash>false</splash>
   <showexitbutton>false</showexitbutton>
   <remotedelay>1</remotedelay>
   <samba>
