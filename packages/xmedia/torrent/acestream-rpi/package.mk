@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2011-present Alex@ELEC (http://alexelec.in.ua)
 
-PKG_NAME="acestream-aml"
+PKG_NAME="acestream-rpi"
 PKG_VERSION="latest"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.acestream.com/"
