@@ -6,7 +6,7 @@ PKG_VERSION="latest"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.acestream.com/"
 PKG_URL=""
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET="toolchain M2Crypto"
 PKG_LONGDESC="This is an innovative media platform of a new generation, which will take you to a new high-quality level of multimedia space on the Internet."
 PKG_TOOLCHAIN="manual"
 
