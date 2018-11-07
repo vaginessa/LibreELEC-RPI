@@ -1,23 +1,18 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
 # Copyright (C) 2017-present Team LibreELEC (https://libreelec.tv)
+# Copyright (C) 2011-present Alex@ELEC (http://alexelec.in.ua)
 
 PKG_NAME="LibreELEC-settings"
-PKG_VERSION="e93c231e4372a9a08e786175f155f13ac3f9140c"
-PKG_SHA256="844bb2abc81d9deda80611305af52084d7d888e14da91e2257ac7ca5d466b8ac"
+PKG_VERSION="118b94c368a20754290e41b428bc2b9574994673"
+PKG_SHA256="e275eda4c0731b86cc275c8d886c54bfc34b824682dc0e37aea3e1580fa029ed"
 PKG_LICENSE="GPL"
-PKG_SITE="https://libreelec.tv"
-PKG_URL="https://github.com/LibreELEC/service.libreelec.settings/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain Python2 connman pygobject dbus-python"
+PKG_SITE="https://github.com/AlexELEC/service.libreelec.settings-rpi"
+PKG_URL="$PKG_SITE/archive/$PKG_VERSION.tar.gz"
+PKG_DEPENDS_TARGET="toolchain Python2 connman pygobject dbus-python bkeymaps"
 PKG_LONGDESC="LibreELEC-settings: is a settings dialog for LibreELEC"
 
 PKG_MAKE_OPTS_TARGET="DISTRONAME=$DISTRONAME ROOT_PASSWORD=$ROOT_PASSWORD"
-
-if [ "$DISPLAYSERVER" = "x11" ]; then
-  PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET setxkbmap"
-else
-  PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET bkeymaps"
-fi
 
 post_makeinstall_target() {
   mkdir -p $INSTALL/usr/lib/libreelec
