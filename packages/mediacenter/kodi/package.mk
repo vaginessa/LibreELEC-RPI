@@ -4,6 +4,7 @@
 
 PKG_NAME="kodi"
 PKG_VERSION="newclock5_18.0b5-Leia"
+PKG_VERSION_GIT="aacac4d newclock5"
 PKG_SHA256="f447006ce1dee5053579fc5193cac1e2e8c19074e71ed86c71e60089232ee2cf"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.kodi.tv"
@@ -190,7 +191,7 @@ PKG_CMAKE_OPTS_TARGET="-DNATIVEPREFIX=$TOOLCHAIN \
                        -DDEPENDS_PATH=$PKG_BUILD/depends \
                        -DPYTHON_EXECUTABLE=$TOOLCHAIN/bin/$PKG_PYTHON_VERSION \
                        -DPYTHON_INCLUDE_DIRS=$SYSROOT_PREFIX/usr/include/$PKG_PYTHON_VERSION \
-                       -DGIT_VERSION=$PKG_VERSION \
+                       -DGIT_VERSION=$PKG_VERSION_GIT \
                        -DWITH_FFMPEG=$(get_build_dir ffmpeg) \
                        -DENABLE_INTERNAL_FFMPEG=OFF \
                        -DFFMPEG_INCLUDE_DIRS=$SYSROOT_PREFIX/usr \
