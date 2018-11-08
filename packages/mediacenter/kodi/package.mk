@@ -4,7 +4,7 @@
 
 PKG_NAME="kodi"
 PKG_VERSION="newclock5_18.0b5-Leia"
-PKG_VERSION_GIT="aacac4d newclock5"
+PKG_VERSION_GIT="aacac4d"
 PKG_SHA256="f447006ce1dee5053579fc5193cac1e2e8c19074e71ed86c71e60089232ee2cf"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.kodi.tv"
