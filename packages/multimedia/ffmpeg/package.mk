@@ -1,11 +1,12 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
 # Copyright (C) 2017-present Team LibreELEC (https://libreelec.tv)
+# Copyright (C) 2011-present Alex@ELEC (http://alexelec.in.ua)
 
 PKG_NAME="ffmpeg"
 # Current branch is: release/4.0-kodi
-PKG_VERSION="719e85d" #4.0.2-Leia-Alpha3
-PKG_SHA256="3d6976f34de2abf7ee05f3f5f2af9ba4142e85f68eab75a83b74e89ab9f61541"
+PKG_VERSION="4.0.3-Leia-Beta5"
+PKG_SHA256="f25559d4b803321483b28ac9b513671200bdc8e3531c02f0affdd622846a9c5e"
 PKG_LICENSE="LGPLv2.1+"
 PKG_SITE="https://ffmpeg.org"
 PKG_URL="https://github.com/xbmc/FFmpeg/archive/${PKG_VERSION}.tar.gz"
@@ -111,7 +112,9 @@ configure_target() {
               --pkg-config="$TOOLCHAIN/bin/pkg-config" \
               --enable-optimizations \
               --disable-extra-warnings \
-              --disable-programs \
+              --disable-ffprobe \
+              --disable-ffplay \
+              --enable-ffmpeg \
               --enable-avdevice \
               --enable-avcodec \
               --enable-avformat \

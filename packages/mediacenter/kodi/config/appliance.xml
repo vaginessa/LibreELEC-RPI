@@ -27,7 +27,7 @@
     <category id="audio">
       <group id="1">
         <setting id="audiooutput.volumesteps">
-          <default>20</default>
+          <default>50</default>
         </setting>
       </group>
     </category>
@@ -44,7 +44,7 @@
     <category id="airplay">
       <group id="1">
         <setting id="services.airplay">
-          <default>true</default>
+          <default>false</default>
         </setting>
       </group>
     </category>
@@ -70,7 +70,7 @@
     <category id="pvrmanager">
       <group id="1">
         <setting id="pvrmanager.syncchannelgroups">
-          <default>false</default>
+          <default>true</default>
         </setting>
       </group>
     </category>
