@@ -4,8 +4,8 @@
 # Copyright (C) 2011-present Alex@ELEC (http://alexelec.in.ua)
 
 PKG_NAME="LibreELEC-settings"
-PKG_VERSION="118b94c368a20754290e41b428bc2b9574994673"
-PKG_SHA256="e275eda4c0731b86cc275c8d886c54bfc34b824682dc0e37aea3e1580fa029ed"
+PKG_VERSION="c11801c8e617db9d413f579a46f910ddc6157752"
+PKG_SHA256="560a985087a5d2809ede62b70184501d2e0c74a93a972ccd7f880fb4d85c7185"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/AlexELEC/service.libreelec.settings-rpi"
 PKG_URL="$PKG_SITE/archive/$PKG_VERSION.tar.gz"
