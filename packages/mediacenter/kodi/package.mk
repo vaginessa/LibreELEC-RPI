@@ -3,9 +3,9 @@
 # Copyright (C) 2017-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="kodi"
-PKG_VERSION="newclock5_18.0b5-Leia"
-PKG_VERSION_GIT="aacac4d"
-PKG_SHA256="f447006ce1dee5053579fc5193cac1e2e8c19074e71ed86c71e60089232ee2cf"
+PKG_VERSION="newclock5_18.0rc2-Leia"
+PKG_VERSION_GIT="a79f16a"
+PKG_SHA256="5e6c3dcac6202039a0a3809b80ea04975c3638699dc2b479da5a0c5c1f3b8f9f"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.kodi.tv"
 PKG_URL="https://github.com/popcornmix/xbmc/archive/$PKG_VERSION.tar.gz"
@@ -15,30 +15,6 @@ PKG_LONGDESC="A free and open source cross-platform media player."
 
 PKG_PATCH_DIRS="$KODI_VENDOR"
 
-<<<<<<< HEAD
-=======
-case $KODI_VENDOR in
-  raspberrypi)
-    PKG_VERSION="newclock5_18.0rc2-Leia"
-    PKG_SHA256="5e6c3dcac6202039a0a3809b80ea04975c3638699dc2b479da5a0c5c1f3b8f9f"
-    PKG_URL="https://github.com/popcornmix/xbmc/archive/$PKG_VERSION.tar.gz"
-    PKG_SOURCE_NAME="kodi-$KODI_VENDOR-$PKG_VERSION.tar.gz"
-    ;;
-  rockchip)
-    PKG_VERSION="rockchip_18.0rc2-Leia"
-    PKG_SHA256="2f70a655a6105e632baf554065b82b7cf6a7291162df714e4bfb18beb5e88335"
-    PKG_URL="https://github.com/kwiboo/xbmc/archive/$PKG_VERSION.tar.gz"
-    PKG_SOURCE_NAME="kodi-$KODI_VENDOR-$PKG_VERSION.tar.gz"
-    ;;
-  *)
-    PKG_VERSION="18.0rc2-Leia"
-    PKG_SHA256="17e95081680d8aaad1693518ebc9703b2402f2ca6fbff8614e53b19d6b922a37"
-    PKG_URL="https://github.com/xbmc/xbmc/archive/$PKG_VERSION.tar.gz"
-    PKG_SOURCE_NAME="kodi-$PKG_VERSION.tar.gz"
-    ;;
-esac
-
->>>>>>> upstream/master
 # Single threaded LTO is very slow so rely on Kodi for parallel LTO support
 if [ "$LTO_SUPPORT" = "yes" ] && ! build_with_debug; then
   PKG_KODI_USE_LTO="-DUSE_LTO=$CONCURRENCY_MAKE_LEVEL"
