@@ -1,12 +1,16 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
+# Copyright (C) 2016-present Team LibreELEC (https://libreelec.tv)
 # Copyright (C) 2011-present Alex@ELEC (http://alexelec.in.ua)
 
 PKG_NAME="oscam"
-PKG_VERSION="25c3ce3"
+PKG_VERSION="3e250cf"
+PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.streamboard.tv/oscam/wiki"
 PKG_URL=""
 PKG_DEPENDS_TARGET="toolchain pcsc-lite openssl"
+PKG_SECTION="xmedia/tvservice"
+PKG_SHORTDESC="oscam: OSCam is Open Source Conditional Access Modul."
 PKG_LONGDESC="OSCam is Open Source Conditional Access Modul."
 
 #colors
@@ -15,7 +19,7 @@ PKG_LONGDESC="OSCam is Open Source Conditional Access Modul."
   ENDCOLOR="\033[0m"
 
 unpack() {
-  git clone https://github.com/Schimmelreiter/oscam-smod.git $PKG_BUILD
+  git clone https://github.com/knicko007/oscam-smod.git $PKG_BUILD
   cd $PKG_BUILD
   git reset --hard $PKG_VERSION
   OSCAM_REVISION=`cat .trunk-svn`
