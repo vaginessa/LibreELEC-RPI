@@ -3,9 +3,9 @@
 # Copyright (C) 2017-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="kodi"
-PKG_VERSION="newclock5_18.0rc2-Leia"
-PKG_VERSION_GIT="a79f16a"
-PKG_SHA256="5e6c3dcac6202039a0a3809b80ea04975c3638699dc2b479da5a0c5c1f3b8f9f"
+PKG_VERSION="newclock5_18.0rc3-Leia"
+PKG_VERSION_GIT="c46dca1"
+PKG_SHA256="5f98caff0908ae44ccf2262f87ead695cd2c8915f0ed5cd44fdbdc0598f70d6a"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.kodi.tv"
 PKG_URL="https://github.com/popcornmix/xbmc/archive/$PKG_VERSION.tar.gz"
