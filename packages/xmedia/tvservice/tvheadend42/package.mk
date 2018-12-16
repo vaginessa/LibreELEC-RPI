@@ -1,10 +1,10 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2011-present Alex@ELEC (http://alexelec.in.ua)
 
-PKG_NAME="tvheadend"
-PKG_VERSION="401821c"
+PKG_NAME="tvheadend42"
+PKG_VERSION="44ac78d"
 PKG_LICENSE="GPL"
-PKG_SITE="http://www.tvheadend.org"
+PKG_SITE="https://github.com/tvheadend/tvheadend"
 PKG_URL=""
 PKG_DEPENDS_TARGET="toolchain avahi curl dvb-apps libdvbcsa libiconv openssl pngquant:host Python2:host"
 PKG_LONGDESC="Tvheadend: a TV streaming server for Linux supporting DVB-S, DVB-S2, DVB-C, DVB-T, ATSC, IPTV, and Analog video (V4L) as input sources."
@@ -15,7 +15,7 @@ YELLOW="\033[1;33m"
 ENDCOLOR="\033[0m"
 
 unpack() {
-  git clone -b 'master' https://github.com/tvheadend/tvheadend.git $PKG_BUILD
+  git clone -b 'release/4.2' https://github.com/tvheadend/tvheadend.git $PKG_BUILD
   cd $PKG_BUILD
   git reset --hard $PKG_VERSION
   TVH_VERSION_NUMBER=`git describe --match "v*" | sed 's/-g.*$//'`
@@ -45,7 +45,6 @@ PKG_CONFIGURE_OPTS_TARGET="--prefix=/usr \
                            --enable-epoll \
                            --enable-inotify \
                            --enable-pngquant \
-                           --enable-ccdebug \
                            --nowerror \
                            --python=$TOOLCHAIN/bin/python"
 
@@ -63,42 +62,10 @@ pre_configure_target() {
   export CFLAGS="$CFLAGS -I$SYSROOT_PREFIX/usr/include/iconv -L$SYSROOT_PREFIX/usr/lib/iconv"
 }
 
-post_make_target() {
-  $CC -O -fbuiltin -fomit-frame-pointer -fPIC -shared -o capmt_ca.so src/extra/capmt_ca.c -ldl
-}
-
 post_makeinstall_target() {
-  mkdir -p $INSTALL/usr/lib
-    cp -P capmt_ca.so $INSTALL/usr/lib
-
-  mkdir -p $INSTALL/usr/bin
-    cp -P $PKG_DIR/scripts/* $INSTALL/usr/bin
-    cp -P support/sat_xml_scan.py $INSTALL/usr/bin/sat_xml_scan
-
-  #sat files
-  echo "-----------------------------------------------------------"
-  echo -e $YELLOW"****** Tvheadend: get transponder files...******"$ENDCOLOR
-  echo "-----------------------------------------------------------"
-  git clone -b 'master' https://github.com/tvheadend/dtv-scan-tables.git data/dvb-scan
-  mkdir -p $INSTALL/usr/config/tvheadend
-  mkdir -p $INSTALL/usr/config/tvheadend/dvb-scan
-    cp -a data/dvb-scan/atsc $INSTALL/usr/config/tvheadend/dvb-scan
-    cp -a data/dvb-scan/dvb-c $INSTALL/usr/config/tvheadend/dvb-scan
-    cp -a data/dvb-scan/dvb-s $INSTALL/usr/config/tvheadend/dvb-scan
-    cp -a data/dvb-scan/dvb-t $INSTALL/usr/config/tvheadend/dvb-scan
-    cp -a data/dvb-scan/isdb-t $INSTALL/usr/config/tvheadend/dvb-scan
-  #config
-    rm -f $INSTALL/usr/config/tvheadend/dvb-scan/dvb-t/ua-Kyiv
-    rm -f $INSTALL/usr/config/tvheadend/dvb-scan/dvb-s/Amos-*
-    rm -f $INSTALL/usr/config/tvheadend/dvb-scan/dvb-s/Sirius-*
-    cp -a $PKG_DIR/config/* $INSTALL/usr/config/tvheadend
-    cp $PKG_DIR/src/* $INSTALL/usr/config
-  #DVB & TTV networks
-  rm -fr $INSTALL/usr/share/tvheadend
-  mkdir -p $INSTALL/usr/share/tvheadend
-    cp -a $PKG_DIR/networks $INSTALL/usr/share/tvheadend
-}
-
-post_install() {
-  enable_service tvheadend.service
+  mv -f $INSTALL/usr/bin/tvheadend $INSTALL/usr/bin/tvheadend42
+  rm -rf $INSTALL/usr/share/tvheadend
+# config
+  mkdir -p $INSTALL/usr/config/tvheadend42
+    cp -a $PKG_DIR/config/* $INSTALL/usr/config/tvheadend42
 }

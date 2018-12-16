@@ -3,20 +3,22 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2011-present Alex@ELEC (http://alexelec.in.ua)
 
-XMLTV_LOCATION_WEB="http://download.teleguide.info/download/new3/xmltv.xml.gz"
-
-XMLTV_DIR="/storage/.config/tvheadend/xmltv.data"
-XMLTV_FILE_GZ="$XMLTV_DIR/xmltv.xml.gz"
+SERVICE_DIR="/storage/.cache/services"
 
 ################################### --MAIN-- #####################################
 
 if [ $# -lt 1 ]; then
   . /etc/profile
 
-  mkdir -p $XMLTV_DIR
-  curl -s --connect-timeout 5 --max-time 20 -R -z "$XMLTV_FILE_GZ" -o "$XMLTV_FILE_GZ" "$XMLTV_LOCATION_WEB"
-  [ ! -e "$XMLTV_FILE_GZ" ] && exit 1
-  zcat "$XMLTV_FILE_GZ"
+  # get EPG
+  [ -x /usr/bin/ttv-xmltv ] && /usr/bin/ttv-xmltv full > /dev/null 2>&1
+  XMLTV_FILE=`ls /storage/ttv-xmltv/*-ttvxmltv.xml.gz 2>/dev/null`
+  [ ! -e "$XMLTV_FILE" ] && exit 1
+  zcat "$XMLTV_FILE"
+
+  # update TTV playlist
+  [ -f $SERVICE_DIR/acerun.conf ] && . $SERVICE_DIR/acerun.conf
+  [ "$ACETTV_UPD" == "1" ] && /usr/bin/ttvget-live nologo > /dev/null 2>&1
   exit 0
 fi
 
@@ -33,7 +35,7 @@ done
 
 if [ -n "$dflag" ]
 then
-  echo "Teleguide.Info grabber"
+  echo "Torrent-TV.ru API grabber"
 fi
 
 if [ -n "$vflag" ]
