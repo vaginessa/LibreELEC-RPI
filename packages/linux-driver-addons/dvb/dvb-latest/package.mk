@@ -2,8 +2,8 @@
 # Copyright (C) 2016-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="dvb-latest"
-PKG_VERSION="9f419c414672676f63e85a61ea99df0ddcd6e9a7"
-PKG_SHA256="284026f37db8880247f94e8fb763107c47ac44460d1b7819e076c61ccec9b86c"
+PKG_VERSION="bd2896dbe1969af199b9f0569d1c60b0ab2859ff"
+PKG_SHA256="00923e79db7b34fec4015cafc1390db388165b86e78564f340759f6da245824e"
 PKG_LICENSE="GPL"
 PKG_SITE="http://git.linuxtv.org/media_build.git"
 PKG_URL="https://git.linuxtv.org/media_build.git/snapshot/${PKG_VERSION}.tar.gz"
