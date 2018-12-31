@@ -25,36 +25,36 @@ unpack() {
   cd $ROOT
 }
 
-PKG_CONFIGURE_OPTS_TARGET="--prefix=/usr \
-                           --arch=$TARGET_ARCH \
-                           --cpu=$TARGET_CPU \
-                           --cc=$CC \
-                           --disable-uriparser \
-                           --disable-ffmpeg_static \
-                           --disable-libav \
-                           --disable-vaapi \
-                           --disable-bintray_cache \
-                           --disable-hdhomerun_static \
-                           --disable-dbus_1 \
-                           --disable-dvbscan \
-                           --disable-libmfx_static \
-                           --enable-avahi \
-                           --enable-dvbcsa \
-                           --enable-tvhcsa \
-                           --enable-bundle \
-                           --enable-epoll \
-                           --enable-inotify \
-                           --enable-pngquant \
-                           --enable-ccdebug \
-                           --nowerror \
-                           --python=$TOOLCHAIN/bin/python"
-
 post_unpack() {
   sed -e 's|@TVH_VERSION_NUMBER@|'$TVH_VERSION_NUMBER'|g' -i $PKG_BUILD/support/version
   sed -e 's|'/usr/bin/pngquant'|'$TOOLCHAIN/bin/pngquant'|g' -i $PKG_BUILD/support/mkbundle
 }
 
 pre_configure_target() {
+  PKG_CONFIGURE_OPTS_TARGET="--prefix=/usr \
+                             --arch=$TARGET_ARCH \
+                             --cpu=$TARGET_CPU \
+                             --cc=$CC \
+                             --disable-uriparser \
+                             --disable-ffmpeg_static \
+                             --disable-libav \
+                             --disable-vaapi \
+                             --disable-bintray_cache \
+                             --disable-hdhomerun_static \
+                             --disable-dbus_1 \
+                             --disable-dvbscan \
+                             --disable-libmfx_static \
+                             --enable-avahi \
+                             --enable-dvbcsa \
+                             --enable-tvhcsa \
+                             --enable-bundle \
+                             --enable-epoll \
+                             --enable-inotify \
+                             --enable-pngquant \
+                             --enable-ccdebug \
+                             --nowerror \
+                             --python=$TOOLCHAIN/bin/python"
+
 # fails to build in subdirs
   cd $PKG_BUILD
     rm -rf .$TARGET_NAME
