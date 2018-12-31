@@ -4,8 +4,13 @@
 # Copyright (C) 2011-present Alex@ELEC (http://alexelec.in.ua)
 
 PKG_NAME="pvr.hts"
+<<<<<<< HEAD
 PKG_VERSION="f4ea60f944d0cfb8b73c0f9dc2181e54d3c367bf"
 PKG_SHA256="751cbd3d2f7938a675ab65b63fb16ba4379f34cecaa1adff7dc1c0a412d7e168"
+=======
+PKG_VERSION="b6a5202214833a95db6c7f35db65a6a49f0cabaf"
+PKG_SHA256="5b7a3b2e0d73446c257019b63feeebbf58d1e2cccb7c9605c0d909a946674494"
+>>>>>>> upstream/master
 PKG_REV="2"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
